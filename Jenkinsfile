@@ -28,7 +28,7 @@ podTemplate(yaml: '''
     stage('Build Docker Image') {
       container('kaniko') {
         sh '''
-          /kaniko/executor --force --context `pwd` --destination registry.stiil.dk/library/php-fpm-nextcloud:$BRANCH_NAME
+          /kaniko/executor --force --log-format=text --context `pwd` --destination registry.stiil.dk/library/php-fpm-nextcloud:$BRANCH_NAME
         '''
       }
     }
